@@ -43,4 +43,46 @@ components:
       expect(outputPin.description, 'Output voltage (5V)');
     });
   });
+
+  group('Search', () {
+    late ComponentLibrary library;
+
+    setUp(() {
+      library = ComponentLibrary.fromFile(File('components.yaml'));
+    });
+
+    test('finds component by name', () {
+      final results = library.search('LM358');
+      expect(results, hasLength(1));
+      expect(results.first.name, 'LM358');
+    });
+
+    test('finds components by type', () {
+      final results = library.search('Op-Amp');
+      expect(results, isNotEmpty);
+      expect(results.every((c) => c.type == 'Op-Amp'), isTrue);
+    });
+
+    test('finds components by description', () {
+      final results = library.search('Precision Timer');
+      expect(results, hasLength(1));
+      expect(results.first.name, 'NE555');
+    });
+
+    test('is case-insensitive', () {
+      final results = library.search('precision timer');
+      expect(results, hasLength(1));
+      expect(results.first.name, 'NE555');
+    });
+
+    test('returns multiple results', () {
+      final results = library.search('regulator');
+      expect(results.length, greaterThan(1));
+    });
+
+    test('returns empty list when no results are found', () {
+      final results = library.search('non-existent component');
+      expect(results, isEmpty);
+    });
+  });
 }

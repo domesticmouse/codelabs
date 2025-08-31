@@ -29,6 +29,15 @@ class ComponentLibrary {
       _$ComponentLibraryFromJson(json);
 
   Map<String, dynamic> toJson() => _$ComponentLibraryToJson(this);
+
+  List<Component> search(String query) {
+    final lowerCaseQuery = query.toLowerCase();
+    return components.where((component) {
+      return component.name.toLowerCase().contains(lowerCaseQuery) ||
+          component.type.toLowerCase().contains(lowerCaseQuery) ||
+          component.description.toLowerCase().contains(lowerCaseQuery);
+    }).toList();
+  }
 }
 
 @JsonSerializable(anyMap: true, checked: true, disallowUnrecognizedKeys: true)
