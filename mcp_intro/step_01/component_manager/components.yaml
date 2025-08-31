@@ -1,0 +1,621 @@
+components:
+  - name: LM358
+    type: Op-Amp
+    description: Low-Power, Dual-Voltage Comparator
+    pins:
+      - pin: 1
+        name: OUTA
+        type: Output
+        description: Output, channel A
+      - pin: 2
+        name: -INA
+        type: Input
+        description: Inverting input, channel A
+      - pin: 3
+        name: +INA
+        type: Input
+        description: Non-inverting input, channel A
+      - pin: 4
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 5
+        name: +INB
+        type: Input
+        description: Non-inverting input, channel B
+      - pin: 6
+        name: -INB
+        type: Input
+        description: Inverting input, channel B
+      - pin: 7
+        name: OUTB
+        type: Output
+        description: Output, channel B
+      - pin: 8
+        name: VCC
+        type: Power
+        description: Positive supply
+  - name: LM393
+    type: Comparator
+    description: Low-Power, Low-Offset Voltage Dual Comparator
+    pins:
+      - pin: 1
+        name: OUTA
+        type: Output
+        description: Output A
+      - pin: 2
+        name: -INA
+        type: Input
+        description: Inverting Input A
+      - pin: 3
+        name: +INA
+        type: Input
+        description: Non-Inverting Input A
+      - pin: 4
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 5
+        name: +INB
+        type: Input
+        description: Non-Inverting Input B
+      - pin: 6
+        name: -INB
+        type: Input
+        description: Inverting Input B
+      - pin: 7
+        name: OUTB
+        type: Output
+        description: Output B
+      - pin: 8
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: NE555
+    type: Timer
+    description: Precision Timer
+    pins:
+      - pin: 1
+        name: GND
+        type: Power
+        description: Ground reference voltage
+      - pin: 2
+        name: TRIG
+        type: Input
+        description: Trigger pin; starts the timing interval
+      - pin: 3
+        name: OUT
+        type: Output
+        description: Output pin
+      - pin: 4
+        name: RESET
+        type: Input
+        description: Reset pin; active low
+      - pin: 5
+        name: CTRL
+        type: Input
+        description: Control voltage pin
+      - pin: 6
+        name: THRES
+        type: Input
+        description: Threshold pin; ends the timing interval
+      - pin: 7
+        name: DISCH
+        type: Output
+        description: Discharge pin
+      - pin: 8
+        name: VCC
+        type: Power
+        description: Positive supply voltage
+  - name: 74HC00
+    type: Logic
+    description: Quad 2-input NAND gate
+    pins:
+      - pin: 1
+        name: 1A
+        type: Input
+        description: Input Gate 1
+      - pin: 2
+        name: 1B
+        type: Input
+        description: Input Gate 1
+      - pin: 3
+        name: 1Y
+        type: Output
+        description: Output Gate 1
+      - pin: 4
+        name: 2A
+        type: Input
+        description: Input Gate 2
+      - pin: 5
+        name: 2B
+        type: Input
+        description: Input Gate 2
+      - pin: 6
+        name: 2Y
+        type: Output
+        description: Output Gate 2
+      - pin: 7
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 8
+        name: 3Y
+        type: Output
+        description: Output Gate 3
+      - pin: 9
+        name: 3A
+        type: Input
+        description: Input Gate 3
+      - pin: 10
+        name: 3B
+        type: Input
+        description: Input Gate 3
+      - pin: 11
+        name: 4Y
+        type: Output
+        description: Output Gate 4
+      - pin: 12
+        name: 4A
+        type: Input
+        description: Input Gate 4
+      - pin: 13
+        name: 4B
+        type: Input
+        description: Input Gate 4
+      - pin: 14
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: 74HC02
+    type: Logic
+    description: Quad 2-input NOR gate
+    pins:
+      - pin: 1
+        name: 1Y
+        type: Output
+        description: Output Gate 1
+      - pin: 2
+        name: 1A
+        type: Input
+        description: Input Gate 1
+      - pin: 3
+        name: 1B
+        type: Input
+        description: Input Gate 1
+      - pin: 4
+        name: 2Y
+        type: Output
+        description: Output Gate 2
+      - pin: 5
+        name: 2A
+        type: Input
+        description: Input Gate 2
+      - pin: 6
+        name: 2B
+        type: Input
+        description: Input Gate 2
+      - pin: 7
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 8
+        name: 3A
+        type: Input
+        description: Input Gate 3
+      - pin: 9
+        name: 3B
+        type: Input
+        description: Input Gate 3
+      - pin: 10
+        name: 3Y
+        type: Output
+        description: Output Gate 3
+      - pin: 11
+        name: 4A
+        type: Input
+        description: Input Gate 4
+      - pin: 12
+        name: 4B
+        type: Input
+        description: Input Gate 4
+      - pin: 13
+        name: 4Y
+        type: Output
+        description: Output Gate 4
+      - pin: 14
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: 74HC04
+    type: Logic
+    description: Hex inverter
+    pins:
+      - pin: 1
+        name: 1A
+        type: Input
+        description: Input Gate 1
+      - pin: 2
+        name: 1Y
+        type: Output
+        description: Output Gate 1
+      - pin: 3
+        name: 2A
+        type: Input
+        description: Input Gate 2
+      - pin: 4
+        name: 2Y
+        type: Output
+        description: Output Gate 2
+      - pin: 5
+        name: 3A
+        type: Input
+        description: Input Gate 3
+      - pin: 6
+        name: 3Y
+        type: Output
+        description: Output Gate 3
+      - pin: 7
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 8
+        name: 4Y
+        type: Output
+        description: Output Gate 4
+      - pin: 9
+        name: 4A
+        type: Input
+        description: Input Gate 4
+      - pin: 10
+        name: 5Y
+        type: Output
+        description: Output Gate 5
+      - pin: 11
+        name: 5A
+        type: Input
+        description: Input Gate 5
+      - pin: 12
+        name: 6Y
+        type: Output
+        description: Output Gate 6
+      - pin: 13
+        name: 6A
+        type: Input
+        description: Input Gate 6
+      - pin: 14
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: 74HC08
+    type: Logic
+    description: Quad 2-input AND gate
+    pins:
+      - pin: 1
+        name: 1A
+        type: Input
+        description: Input Gate 1
+      - pin: 2
+        name: 1B
+        type: Input
+        description: Input Gate 1
+      - pin: 3
+        name: 1Y
+        type: Output
+        description: Output Gate 1
+      - pin: 4
+        name: 2A
+        type: Input
+        description: Input Gate 2
+      - pin: 5
+        name: 2B
+        type: Input
+        description: Input Gate 2
+      - pin: 6
+        name: 2Y
+        type: Output
+        description: Output Gate 2
+      - pin: 7
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 8
+        name: 3Y
+        type: Output
+        description: Output Gate 3
+      - pin: 9
+        name: 3A
+        type: Input
+        description: Input Gate 3
+      - pin: 10
+        name: 3B
+        type: Input
+        description: Input Gate 3
+      - pin: 11
+        name: 4Y
+        type: Output
+        description: Output Gate 4
+      - pin: 12
+        name: 4A
+        type: Input
+        description: Input Gate 4
+      - pin: 13
+        name: 4B
+        type: Input
+        description: Input Gate 4
+      - pin: 14
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: 74HC32
+    type: Logic
+    description: Quad 2-input OR gate
+    pins:
+      - pin: 1
+        name: 1A
+        type: Input
+        description: Input Gate 1
+      - pin: 2
+        name: 1B
+        type: Input
+        description: Input Gate 1
+      - pin: 3
+        name: 1Y
+        type: Output
+        description: Output Gate 1
+      - pin: 4
+        name: 2A
+        type: Input
+        description: Input Gate 2
+      - pin: 5
+        name: 2B
+        type: Input
+        description: Input Gate 2
+      - pin: 6
+        name: 2Y
+        type: Output
+        description: Output Gate 2
+      - pin: 7
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 8
+        name: 3Y
+        type: Output
+        description: Output Gate 3
+      - pin: 9
+        name: 3A
+        type: Input
+        description: Input Gate 3
+      - pin: 10
+        name: 3B
+        type: Input
+        description: Input Gate 3
+      - pin: 11
+        name: 4Y
+        type: Output
+        description: Output Gate 4
+      - pin: 12
+        name: 4A
+        type: Input
+        description: Input Gate 4
+      - pin: 13
+        name: 4B
+        type: Input
+        description: Input Gate 4
+      - pin: 14
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: 74HC86
+    type: Logic
+    description: Quad 2-input XOR gate
+    pins:
+      - pin: 1
+        name: 1A
+        type: Input
+        description: Input Gate 1
+      - pin: 2
+        name: 1B
+        type: Input
+        description: Input Gate 1
+      - pin: 3
+        name: 1Y
+        type: Output
+        description: Output Gate 1
+      - pin: 4
+        name: 2A
+        type: Input
+        description: Input Gate 2
+      - pin: 5
+        name: 2B
+        type: Input
+        description: Input Gate 2
+      - pin: 6
+        name: 2Y
+        type: Output
+        description: Output Gate 2
+      - pin: 7
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 8
+        name: 3Y
+        type: Output
+        description: Output Gate 3
+      - pin: 9
+        name: 3A
+        type: Input
+        description: Input Gate 3
+      - pin: 10
+        name: 3B
+        type: Input
+        description: Input Gate 3
+      - pin: 11
+        name: 4Y
+        type: Output
+        description: Output Gate 4
+      - pin: 12
+        name: 4A
+        type: Input
+        description: Input Gate 4
+      - pin: 13
+        name: 4B
+        type: Input
+        description: Input Gate 4
+      - pin: 14
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: 74HC595
+    type: Logic
+    description: 8-bit shift register with 3-state output registers
+    pins:
+      - pin: 1
+        name: QB
+        type: Output
+        description: Serial Output B
+      - pin: 2
+        name: QC
+        type: Output
+        description: Serial Output C
+      - pin: 3
+        name: QD
+        type: Output
+        description: Serial Output D
+      - pin: 4
+        name: QE
+        type: Output
+        description: Serial Output E
+      - pin: 5
+        name: QF
+        type: Output
+        description: Serial Output F
+      - pin: 6
+        name: QG
+        type: Output
+        description: Serial Output G
+      - pin: 7
+        name: QH
+        type: Output
+        description: Serial Output H
+      - pin: 8
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 9
+        name: QH'
+        type: Output
+        description: Serial Data Output
+      - pin: 10
+        name: SCLR
+        type: Input
+        description: Master Reset (active low)
+      - pin: 11
+        name: SCK
+        type: Input
+        description: Shift Register Clock
+      - pin: 12
+        name: RCK
+        type: Input
+        description: Storage Register Clock
+      - pin: 13
+        name: G
+        type: Input
+        description: Output Enable (active low)
+      - pin: 14
+        name: SER
+        type: Input
+        description: Serial Data Input
+      - pin: 15
+        name: QA
+        type: Output
+        description: Serial Output A
+      - pin: 16
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: LM7805
+    type: Regulator
+    description: 5V Positive Voltage Regulator
+    pins:
+      - pin: 1
+        name: INPUT
+        type: Input
+        description: Input voltage
+      - pin: 2
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 3
+        name: OUTPUT
+        type: Output
+        description: Output voltage (5V)
+  - name: LM7905
+    type: Regulator
+    description: 5V Negative Voltage Regulator
+    pins:
+      - pin: 1
+        name: GND
+        type: Power
+        description: Ground
+      - pin: 2
+        name: INPUT
+        type: Input
+        description: Input voltage (-Vin)
+      - pin: 3
+        name: OUTPUT
+        type: Output
+        description: Output voltage (-5V)
+  - name: TL072
+    type: Op-Amp
+    description: Low-Noise JFET-Input Dual Operational Amplifier
+    pins:
+      - pin: 1
+        name: 1OUT
+        type: Output
+        description: Output, channel 1
+      - pin: 2
+        name: 1IN-
+        type: Input
+        description: Inverting input, channel 1
+      - pin: 3
+        name: 1IN+
+        type: Input
+        description: Non-inverting input, channel 1
+      - pin: 4
+        name: VEE
+        type: Power
+        description: Negative Supply
+      - pin: 5
+        name: 2IN+
+        type: Input
+        description: Non-inverting input, channel 2
+      - pin: 6
+        name: 2IN-
+        type: Input
+        description: Inverting input, channel 2
+      - pin: 7
+        name: 2OUT
+        type: Output
+        description: Output, channel 2
+      - pin: 8
+        name: VCC
+        type: Power
+        description: Positive Supply
+  - name: LM1117
+    type: Regulator
+    description: Low Dropout Positive Voltage Regulator
+    pins:
+      - pin: 1
+        name: ADJ/GND
+        type: Input
+        description: Adjust pin (for adjustable version) or Ground (for fixed version)
+      - pin: 2
+        name: VOUT
+        type: Output
+        description: Output voltage
+      - pin: 3
+        name: VIN
+        type: Input
+        description: Input voltage
