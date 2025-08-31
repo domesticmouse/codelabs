@@ -30,7 +30,7 @@ A well-designed API is intuitive and easy to use.
 
 - **Create small, focused libraries:** Break down your code into smaller, individual libraries (often one class per file).
 - **Export public APIs:** Use the `export` directive in your main library file to expose the public parts of your library.
-- **Hide implementation details:** Keep your internal logic in the `lib/src` directory and don't export those files from your main library file.
+- **Hide implementation details:** Keep your internal logic in the `lib/src` directory and.
 - **Avoid the `part` directive:** The modern convention is to create smaller, individual libraries instead of using the `part` directive.
 
 ## Versioning
@@ -51,3 +51,70 @@ Good documentation is as important as good code.
 - **Write a library-level doc comment:** Add a doc comment at the top of your main library file to provide an overview of the library.
 - **Provide a `README.md` file:** Give a high-level overview of your package, how to install it, and a simple usage example.
 - **Maintain a `CHANGELOG.md` file:** Keep a log of changes for each new version of your package.
+
+## Using `checked_yaml`
+
+The `checked_yaml` package provides a safe and convenient way to parse YAML files, with helpful error messages.
+
+### Installation
+
+Add `checked_yaml` to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  checked_yaml: ^2.0.4
+```
+
+Then, run `dart pub get` to install the package.
+
+### Example
+
+Here's an example of how to use `checked_yaml` to parse a YAML file and convert it into a Dart object.
+
+First, define a class to represent the data in your YAML file. Use the `json_serializable` package to generate the `fromJson` and `toJson` methods.
+
+```dart
+import 'package:json_annotation/json_annotation.dart';
+
+part 'configuration.g.dart';
+
+@JsonSerializable(anyMap: true, checked: true, disallowUnrecognizedKeys: true)
+class Configuration {
+  @JsonKey(required: true)
+  final String name;
+
+  final int count;
+
+  Configuration({required this.name, required this.count}) {
+    if (name.isEmpty) {
+      throw ArgumentError.value(name, 'name', 'Cannot be empty.');
+    }
+  }
+
+  factory Configuration.fromJson(Map json) => _$ConfigurationFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ConfigurationToJson(this);
+
+  @override
+  String toString() => 'Configuration: ${toJson()}';
+}
+```
+
+Then, use the `checkedYamlDecode` function to parse the YAML file and create an instance of your class.
+
+```dart
+import 'dart:io';
+import 'package:checked_yaml/checked_yaml.dart';
+import 'configuration.dart';
+
+void main() {
+  final yamlContent = File('config.yaml').readAsStringSync();
+  final config = checkedYamlDecode(
+    yamlContent,
+    (m) => Configuration.fromJson(m!),
+    sourceUrl: Uri.parse('config.yaml'),
+  );
+
+  print(config);
+}
+```
