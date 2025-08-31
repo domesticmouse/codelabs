@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:checked_yaml/checked_yaml.dart';
 import 'package:component_manager/component_manager.dart';
 import 'package:test/test.dart';
 
@@ -8,13 +5,7 @@ void main() {
   late ComponentLibrary library;
 
   setUp(() {
-    final file = File('components.yaml');
-    final yamlContent = file.readAsStringSync();
-    library = checkedYamlDecode(
-      yamlContent,
-      (m) => ComponentLibrary.fromJson(m!),
-      sourceUrl: file.uri,
-    );
+    library = ComponentLibrary.fromFile('components.yaml');
   });
 
   test('parses all components', () {

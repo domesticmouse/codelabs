@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:checked_yaml/checked_yaml.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'component_library.g.dart';
@@ -8,6 +11,16 @@ class ComponentLibrary {
   final List<Component> components;
 
   ComponentLibrary({required this.components});
+
+  factory ComponentLibrary.fromFile(String path) {
+    final file = File(path);
+    final yamlContent = file.readAsStringSync();
+    return checkedYamlDecode(
+      yamlContent,
+      (m) => ComponentLibrary.fromJson(m!),
+      sourceUrl: file.uri,
+    );
+  }
 
   factory ComponentLibrary.fromJson(Map json) =>
       _$ComponentLibraryFromJson(json);
