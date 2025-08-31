@@ -38,7 +38,7 @@ Choosing the right state management approach is crucial for a scalable and maint
 
 The Flutter ecosystem provides excellent tools to help you write and maintain idiomatic code.
 
-*   **`flutter analyze`:** This built-in command-line tool performs static analysis on your code to identify potential errors and style violations.
+*   **Use the Dart MCP server:** Instead of running `flutter` and `dart` commands from the command line, use the Dart MCP server for a more integrated experience. This allows for features like code analysis, formatting, and running tests directly from your editor.
 *   **Linting Packages:**
     *   **`lints`:** The official set of lint rules from the Dart team, encouraging good coding practices.
     *   **`flutter_lints`:** Recommended for Flutter apps, this package builds upon `lints` with additional Flutter-specific rules.
