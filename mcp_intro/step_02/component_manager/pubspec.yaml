@@ -1,0 +1,19 @@
+name: component_manager
+description: A dart package to manage Jellybean ICs
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.9.0
+
+# Add regular dependencies here.
+dependencies:
+  path: ^1.9.0
+  checked_yaml: ^2.0.4
+  json_annotation: ^4.9.0
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.25.6
+  build_runner: ^2.4.11
+  json_serializable: ^6.8.0
