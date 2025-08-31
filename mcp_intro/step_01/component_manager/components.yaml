@@ -619,3 +619,47 @@ components:
         name: VIN
         type: Input
         description: Input voltage
+  - name: LM4040
+    type: Voltage Reference
+    description: Precision Micropower Shunt Voltage Reference
+    pins:
+      - pin: 1
+        name: CATHODE
+        type: Power
+        description: Cathode
+      - pin: 2
+        name: ANODE
+        type: Power
+        description: Anode (Ground)
+  - name: LM4041
+    type: Voltage Reference
+    description: Precision Micropower Shunt Voltage Reference with Adjustable Output
+    pins:
+      - pin: 1
+        name: CATHODE
+        type: Power
+        description: Cathode
+      - pin: 2
+        name: ANODE
+        type: Power
+        description: Anode (Ground)
+      - pin: 3
+        name: ADJUST
+        type: Input
+        description: Adjust pin
+  - name: TL431
+    type: Voltage Reference
+    description: Programmable Shunt Regulator
+    pins:
+      - pin: 1
+        name: REFERENCE
+        type: Input
+        description: Reference voltage input
+      - pin: 2
+        name: ANODE
+        type: Power
+        description: Anode (Ground)
+      - pin: 3
+        name: CATHODE
+        type: Power
+        description: Cathode
