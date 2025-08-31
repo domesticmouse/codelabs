@@ -63,16 +63,16 @@ Pin _$PinFromJson(Map json) => $checkedCreate('Pin', json, ($checkedConvert) {
     requiredKeys: const ['pin', 'name', 'type', 'description'],
   );
   final val = Pin(
-    pin: $checkedConvert('pin', (v) => (v as num).toInt()),
+    number: $checkedConvert('pin', (v) => (v as num).toInt()),
     name: $checkedConvert('name', (v) => v as String),
     type: $checkedConvert('type', (v) => v as String),
     description: $checkedConvert('description', (v) => v as String),
   );
   return val;
-});
+}, fieldKeyMap: const {'number': 'pin'});
 
 Map<String, dynamic> _$PinToJson(Pin instance) => <String, dynamic>{
-  'pin': instance.pin,
+  'pin': instance.number,
   'name': instance.name,
   'type': instance.type,
   'description': instance.description,

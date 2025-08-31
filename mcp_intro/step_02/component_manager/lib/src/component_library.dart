@@ -88,8 +88,8 @@ class Component {
 @JsonSerializable(anyMap: true, checked: true, disallowUnrecognizedKeys: true)
 class Pin {
   /// The pin number.
-  @JsonKey(required: true)
-  final int pin;
+  @JsonKey(name: 'pin', required: true)
+  final int number;
 
   /// The name of the pin.
   @JsonKey(required: true)
@@ -105,7 +105,7 @@ class Pin {
 
   /// Creates a new pin.
   Pin({
-    required this.pin,
+    required this.number,
     required this.name,
     required this.type,
     required this.description,

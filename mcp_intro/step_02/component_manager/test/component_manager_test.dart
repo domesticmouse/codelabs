@@ -38,7 +38,7 @@ components:
       final library = ComponentLibrary.fromFile(File('components.yaml'));
       final lm7805 = library.components.firstWhere((c) => c.name == 'LM7805');
       final outputPin = lm7805.pins.firstWhere((p) => p.name == 'OUTPUT');
-      expect(outputPin.pin, 3);
+      expect(outputPin.number, 3);
       expect(outputPin.type, 'Output');
       expect(outputPin.description, 'Output voltage (5V)');
     });
