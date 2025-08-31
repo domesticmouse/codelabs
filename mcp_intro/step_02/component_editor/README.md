@@ -1,6 +1,6 @@
-# component_editor
+# Component Editor
 
-A new Flutter project.
+A Flutter application to view and edit electronic components.
 
 ## Getting Started
 
