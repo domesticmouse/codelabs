@@ -12,13 +12,16 @@ class ComponentLibrary {
 
   ComponentLibrary({required this.components});
 
-  factory ComponentLibrary.fromFile(String path) {
-    final file = File(path);
+  factory ComponentLibrary.fromFile(File file) {
     final yamlContent = file.readAsStringSync();
+    return ComponentLibrary.fromYaml(yamlContent, sourceUrl: file.uri);
+  }
+
+  factory ComponentLibrary.fromYaml(String yaml, {Uri? sourceUrl}) {
     return checkedYamlDecode(
-      yamlContent,
+      yaml,
       (m) => ComponentLibrary.fromJson(m!),
-      sourceUrl: file.uri,
+      sourceUrl: sourceUrl,
     );
   }
 
